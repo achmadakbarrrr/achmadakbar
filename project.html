@@ -1,76 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Project Game - Achmad</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Achmad</title>
 
-        .game {
-            background: #1e293b;
-            padding: 20px;
-            margin: 15px auto;
-            width: 300px;
-            border-radius: 10px;
-        }
+<style>
 
-        a {
-            color: cyan;
-            text-decoration: none;
-        }
-    </style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #111827;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.container {
+    padding: 50px 20px;
+}
+
+.card {
+    background: #1e293b;
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.download {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #22d3ee;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Daftar Project Game 🎮</h1>
+<nav>
+    <div>🎮 Projects</div>
+    <div>
+        <a href="index.html">Home</a>
+    </div>
+</nav>
 
-<div class="game">
+<div class="container">
+
+<h1>Daftar Project Game</h1>
+
+<div class="card">
+    <img src="gambargame1.jpg">
     <h3>Game 1</h3>
-
-    <!-- FOTO GAME -->
-    <img src="gambargame1.png" 
-         style="width:100%; border-radius:10px; margin-bottom:15px;">
-
-    <!-- TOMBOL DOWNLOAD (KE ITCH.IO) -->
-    <a href="https://achmadakbar.itch.io/learn-jump" 
-       target="_blank" 
-       style="display:inline-block;
-              padding:10px 20px;
-              background:#22d3ee;
-              color:black;
-              text-decoration:none;
-              border-radius:8px;">
-        ⬇ Download Game
+    <a href="https://achmadakbar.itch.io/learn-jump"
+       target="_blank"
+       class="download">
+       ⬇ Download Game
     </a>
 </div>
 
-<div class="game">
+<div class="card">
+    <img src="gambargame2.jpg">
     <h3>Game 2</h3>
-
-    <!-- FOTO GAME -->
-    <img src="gambargame2.jpg" 
-         style="width:100%; border-radius:10px; margin-bottom:15px;">
-
-    <!-- TOMBOL DOWNLOAD (KE ITCH.IO) -->
-    <a href="https://achmadakbar.itch.io/" 
-       target="_blank" 
-       style="display:inline-block;
-              padding:10px 20px;
-              background:#22d3ee;
-              color:black;
-              text-decoration:none;
-              border-radius:8px;">
-        ⬇ Download Game
+    <a href="https://achmadakbar.itch.io/"
+       target="_blank"
+       class="download">
+       ⬇ Download Game
     </a>
 </div>
 
-<br>
-<a href="index.html">⬅ Kembali ke Home</a>
+</div>
 
 </body>
 </html>
