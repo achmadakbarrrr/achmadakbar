@@ -1,69 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portofolio Achmad Aulia Akbar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achmad Aulia Akbar | Game Developer</title>
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-        }
+<style>
 
-        img {
-            width: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+}
 
-        h1 {
-            font-size: 32px;
-        }
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #111827;
+}
 
-        .menu {
-            margin-top: 40px;
-        }
+nav h2 {
+    margin: 0;
+}
 
-        .btn {
-            display: block;
-            margin: 15px auto;
-            padding: 15px;
-            width: 200px;
-            background: #334155;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
-        .btn:hover {
-            background: #475569;
-            transform: scale(1.05);
-        }
-    </style>
+nav a:hover {
+    color: #22d3ee;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #94a3b8;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #22d3ee;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<nav>
+    <h2>🎮 Achmad</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="project.html">Projects</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <img src="PAS FOTO.jpeg" alt="Profile">
     <h1>Selamat Datang di Portofolio</h1>
-    <h2>Achmad Aulia Akbar 🎮</h2>
+    <h2>Achmad Aulia Akbar</h2>
     <p>Game & Web Developer</p>
 
-    <!-- Ganti link foto dengan foto kamu -->
-    <img src="PAS FOTO.jpeg" alt="Foto Profil">
-
-    <div class="menu">
-        <a href="cv.html" class="btn">📄 CV</a>
-        <a href="project.html" class="btn">🎮 Project Game</a>
-    </div>
-</div>
+    <a href="cv.html" class="btn">📄 Download CV</a>
+</section>
 
 </body>
 </html>
