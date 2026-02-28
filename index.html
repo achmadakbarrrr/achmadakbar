@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Achmad Aulia Akbar - Game Developer</title>
+    <title>Portofolio Achmad Aulia Akbar</title>
     <style>
         body {
-            background-color: #0f172a;
-            color: white;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
             text-align: center;
             padding: 50px;
         }
-        h1 {
-            font-size: 40px;
+
+        .container {
+            max-width: 700px;
+            margin: auto;
         }
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin: 20px auto;
-            width: 300px;
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .menu {
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: block;
+            margin: 15px auto;
+            padding: 15px;
+            width: 200px;
+            background: #334155;
+            color: white;
+            text-decoration: none;
             border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #475569;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
-    <h1>🎮 Achmad Aulia Akbar</h1>
+<div class="container">
+    <h1>Selamat Datang di Portofolio</h1>
+    <h2>Achmad Aulia Akbar 🎮</h2>
     <p>Game & Web Developer</p>
 
-    <div class="card">
-        <h3>Project 1</h3>
-        <p>Game edukasi 2D berbasis Unity</p>
-    </div>
+    <!-- Ganti link foto dengan foto kamu -->
+    <img src="https://via.placeholder.com/150" alt="Foto Profil">
 
-    <div class="card">
-        <h3>Project 2</h3>
-        <p>Website Sistem Informasi</p>
+    <div class="menu">
+        <a href="cv.html" class="btn">📄 CV</a>
+        <a href="project.html" class="btn">🎮 Project Game</a>
     </div>
+</div>
 
 </body>
 </html>
