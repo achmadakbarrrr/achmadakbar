@@ -163,14 +163,14 @@ function goHome() {
     });
 }
 
-/* 🔥 TEMPEL DI SINI */
 window.addEventListener("scroll", function() {  
-document.querySelectorAll(".fade-in").forEach(el => {  
-const position = el.getBoundingClientRect().top;  
-const screenHeight = window.innerHeight;  
-if(position < screenHeight - 100) {  
-el.classList.add("show");  
-}  
+    document.querySelectorAll(".fade-in").forEach(el => {  
+        const position = el.getBoundingClientRect().top;  
+        const screenHeight = window.innerHeight;  
+        if(position < screenHeight - 100) {  
+            el.classList.add("show");  
+        }  
+    });
 });
 
 const texts = ["Game Developer", "Unity Developer", "Web Developer"];
@@ -193,13 +193,12 @@ let letter = "";
         setTimeout(() => {
             index = 0;
             count++;
-        }, 2000);
+        }, 1500);
     }
 
-    setTimeout(type, 500);
+    setTimeout(type, 100);
 })();
     
-});
 </script>
 
 </head>
