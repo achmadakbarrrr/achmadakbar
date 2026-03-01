@@ -172,34 +172,6 @@ window.addEventListener("scroll", function() {
         }  
     });
 });
-
-const texts = ["Game Developer", "Unity Developer", "Web Developer"];
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-(function type() {
-    if (count === texts.length) {
-        count = 0;
-    }
-
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-
-    document.getElementById("typing-text").textContent = letter;
-
-    if (letter.length === currentText.length) {
-        setTimeout(() => {
-            index = 0;
-            count++;
-        }, 1500);
-    }
-
-    setTimeout(type, 100);
-}
-
-type();
     
 </script>
 
@@ -207,7 +179,7 @@ type();
 <body>
 
 <header>
-    <h1 class="hero-title">Selamat Datang di Portofolio</h1>
+    <h1>Selamat Datang di Portofolio</h1>
     <p>Achmad Aulia Akbar</p>
     <h2 id="typing-text" style="margin-top:15px;"></h2>
     <img src="PAS FOTO.jpeg" 
