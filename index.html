@@ -8,6 +8,14 @@
 <meta name="description" content="Portofolio Achmad Aulia Akbar - Game Developer Unity & Web Developer">
 <meta name="author" content="Achmad Aulia Akbar">
 <meta name="keywords" content="Game Developer, Unity, C#, Portfolio, Web Developer">
+
+<link rel="icon" href="favicon.png">
+
+<meta property="og:title" content="Portofolio Achmad Aulia Akbar">
+<meta property="og:description" content="Game Developer Unity (2D) & Web Developer">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://achmadakbarrrr.github.io/achmadakbar/">
+<meta property="og:image" content="og-image.png">
     
 <style>
 body {
@@ -82,6 +90,13 @@ header p {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.menu button:focus-visible,
+.game-card:focus-visible,
+.back-btn:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}    
 
 .menu button:hover {
     background: #06b6d4;
@@ -162,9 +177,8 @@ function showSection(id) {
 }
 
 function goHome() {
-    document.querySelectorAll('.section').forEach(sec => {
-        sec.classList.remove('active');
-    });
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 window.addEventListener("scroll", function() {  
@@ -185,7 +199,7 @@ window.addEventListener("scroll", function() {
 <header>
     <h1 class="hero-title">Selamat Datang di Portofolio</h1>
     <p>Achmad Aulia Akbar</p>
-    <img src="PAS FOTO.jpeg" 
+    <img src="PAS FOTO.webp" 
      style="width:120px; 
             height:120px; 
             object-fit:cover; 
@@ -226,15 +240,7 @@ Saya senang membangun sistem interaktif, gameplay mechanic, dan pengalaman visua
     <!-- Jika mau tampil PDF -->
     <iframe src="CV_AchmadAuliaAkbar.pdf" width="100%" height="500px"></iframe>
     <br><br>
-    <a href="CV_AchmadAuliaAkbar.pdf" download
-       style="display:inline-block;
-          padding:10px 20px;
-          background:#22d3ee;
-          color:black;
-          text-decoration:none;
-          border-radius:8px;">
-       ⬇ Download CV
-    </a>
+    <a href="CV_AchmadAuliaAkbar.pdf" target="_blank" rel="noopener">🔎 Buka CV di tab baru</a>
     <button class="back-btn" onclick="goHome()">Kembali</button>
 </div>
 
@@ -245,11 +251,11 @@ Saya senang membangun sistem interaktif, gameplay mechanic, dan pengalaman visua
     <div class="games">
 
         <!-- GAME 1 -->
-        <div class="game-card" onclick="window.open('https://achmadakbar.itch.io/learn-jump', '_blank')">
+        <a class="game-card" href="https://achmadakbar.itch.io/learn-jump" target="_blank" rel="noopener">
             <img src="gambargame1.png" alt="Game 1">
             <h3>LEARN & JUMP!</h3>
             <p>Klik untuk download di itch.io</p>
-        </div>
+        </a>
 
         <!-- GAME 2 -->
         <div class="game-card" onclick="window.open('https://meritroia.itch.io/gala-flare-of-bravery', '_blank')">
