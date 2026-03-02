@@ -1,279 +1,756 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Achmad Aulia Akbar</title>
-    
-<meta name="description" content="Portofolio Achmad Aulia Akbar - Game Developer Unity & Web Developer">
-<meta name="author" content="Achmad Aulia Akbar">
-<meta name="keywords" content="Game Developer, Unity, C#, Portfolio, Web Developer">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Achmad Aulia Akbar</title>
 
-<link rel="icon" href="favicon.png">
+  <meta name="description" content="Portofolio Achmad Aulia Akbar - Game Developer Unity (2D) & Web Developer" />
+  <meta name="author" content="Achmad Aulia Akbar" />
+  <meta name="keywords" content="Game Developer, Unity, C#, Portfolio, Web Developer, HTML, CSS, JavaScript" />
 
-<meta property="og:title" content="Portofolio Achmad Aulia Akbar">
-<meta property="og:description" content="Game Developer Unity (2D) & Web Developer">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://achmadakbarrrr.github.io/achmadakbar/">
-<meta property="og:image" content="og-image.png">
-    
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: white;
-}
+  <!-- Open Graph (biar bagus kalau dishare) -->
+  <meta property="og:title" content="Portofolio Achmad Aulia Akbar" />
+  <meta property="og:description" content="Game Developer Unity (2D) & Web Developer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://achmadakbarrrr.github.io/achmadakbar/" />
+  <!-- Siapkan og-image.png di repo kalau mau -->
+  <meta property="og:image" content="og-image.png" />
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
-}
+  <!-- Favicon (siapkan favicon.png kalau mau) -->
+  <link rel="icon" href="favicon.png" />
 
-header img {
-    box-shadow: 0 0 25px rgba(255,255,255,0.5);
-    transition: 0.4s;
-}
-
-header img:hover {
-    transform: scale(1.05);
-}
-    
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero-title {
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: fadeSlide 1.5s ease forwards;
-    text-shadow: 0 0 10px rgba(255,255,255,0.6);
-}
-
-@keyframes fadeSlide {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.10);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --brand: #22d3ee;
+      --brand2:#6366f1;
+      --danger:#fb7185;
+      --shadow: 0 18px 45px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
     }
-}    
-    
-.menu {
-    text-align: center;
-    margin: 40px 0;
-}
 
-.menu button {
-    padding: 12px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #22d3ee;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(34,211,238,0.18), transparent 60%),
+                  radial-gradient(900px 500px at 95% 10%, rgba(99,102,241,0.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
 
-.menu button:focus-visible,
-.game-card:focus-visible,
-.back-btn:focus-visible {
-  outline: 3px solid #22d3ee;
-  outline-offset: 3px;
-}    
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 220px;
+    }
+    .brand .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 18px rgba(34,211,238,0.45);
+    }
+    .brand strong{ font-size: 14px; letter-spacing: 0.2px; }
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      opacity: 0.9;
+    }
+    .nav a:hover{ background: rgba(255,255,255,0.06); opacity: 1; }
 
-.menu button:hover {
-    background: #06b6d4;
-    transform: scale(1.05);
-}
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+    }
+    .btn{
+      border:0;
+      cursor:pointer;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      color: #061018;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      box-shadow: 0 10px 30px rgba(34,211,238,0.18);
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.secondary{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      box-shadow: none;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .btn.danger{
+      color: white;
+      background: linear-gradient(135deg, var(--danger), #ef4444);
+      box-shadow: 0 10px 30px rgba(239,68,68,0.16);
+    }
 
-.section {
-    display: none;
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: 0.4s ease;
-}
+    /* Layout sections */
+    .container{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 70px; }
 
-.section.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+    .hero{
+      padding: 34px 0 18px;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 22px;
+      align-items:center;
+    }
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
 
-.games {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+    }
 
-.game-card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
+    .hero-left{ padding: 26px; position: relative; overflow:hidden; }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 35% 25%, rgba(34,211,238,0.18), transparent 45%),
+                  radial-gradient(circle at 70% 35%, rgba(99,102,241,0.18), transparent 55%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
+    .hero-left > *{ position: relative; }
 
-.game-card:hover {
-    transform: translateY(-10px);
-    background: #334155;
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
-}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .badge .spark{
+      width:18px; height:18px; border-radius:999px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color: #061018;
+      font-size: 12px;
+      font-weight: 900;
+    }
 
-.game-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+    h1{
+      margin: 14px 0 8px;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+    }
+    @media(max-width: 520px){ h1{ font-size: 34px; } }
 
-.back-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #f43f5e;
-    color: white;
-    cursor: pointer;
-}
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 58ch;
+    }
 
-.back-btn:hover {
-    background: #e11d48;
-}
-</style>
+    .hero-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
 
-<script>
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(sec => {
-        sec.classList.remove('active');
-    });
+    .hero-right{
+      padding: 22px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items:center;
+      text-align:center;
+    }
+    .avatar{
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      border: 4px solid rgba(255,255,255,0.85);
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(255,255,255,0.25);
+      transition: transform .25s ease;
+    }
+    .avatar:hover{ transform: scale(1.03); }
+    .small{
+      color: var(--muted);
+      font-size: 13px;
+      margin:0;
+    }
 
-    const target = document.getElementById(id);
-    target.classList.add('active');
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 860px){ .grid{ grid-template-columns: 1fr; } }
 
-    window.scrollTo({
-        top: target.offsetTop - 20,
-        behavior: "smooth"
-    });
-}
+    .section{
+      padding: 22px;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .section p{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
 
-function goHome() {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+    .chips{ margin-top: 14px; display:flex; flex-wrap:wrap; gap: 10px; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-weight: 800;
+      font-size: 12px;
+      color: rgba(229,231,235,0.95);
+    }
 
-window.addEventListener("scroll", function() {  
-    document.querySelectorAll(".fade-in").forEach(el => {  
-        const position = el.getBoundingClientRect().top;  
-        const screenHeight = window.innerHeight;  
-        if(position < screenHeight - 100) {  
-            el.classList.add("show");  
-        }  
-    });
-});
-    
-</script>
+    /* Projects */
+    .projects-wrap{ margin-top: 18px; }
+    .projects-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      margin: 6px 0 12px;
+    }
+    .projects-head h2{ margin:0; font-size: 18px; }
+    .hint{ color: var(--muted); font-size: 12px; margin:0; }
 
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .project{
+      grid-column: span 6;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      text-decoration:none;
+      color: var(--text);
+      transition: transform .18s ease, box-shadow .2s ease, background .2s ease;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      cursor:pointer;
+      position: relative;
+      overflow:hidden;
+    }
+    .project:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.22);
+    }
+    @media (max-width: 860px){ .project{ grid-column: span 12; } }
+
+    .project img{
+      width: 100%;
+      border-radius: 14px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .project h3{
+      margin: 2px 0 0;
+      font-size: 16px;
+      letter-spacing:-0.2px;
+    }
+    .project p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .pill-row{ display:flex; gap: 8px; flex-wrap:wrap; }
+    .pill{
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(229,231,235,0.9);
+      background: rgba(0,0,0,0.20);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* CV */
+    .cv-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 12px; }
+
+    iframe{
+      width:100%;
+      height: 520px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Contact */
+    .contact-list{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media(max-width: 620px){ .contact-list{ grid-template-columns: 1fr; } }
+    .contact-item{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: var(--text);
+    }
+    .contact-item small{ color: var(--muted); display:block; margin-top: 2px; }
+    .contact-item:hover{ background: rgba(255,255,255,0.08); }
+
+    /* Modal */
+    .modal{
+      position: fixed;
+      inset:0;
+      background: rgba(0,0,0,0.62);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 100;
+    }
+    .modal.show{ display:flex; }
+    .modal-card{
+      width: min(920px, 100%);
+      border-radius: 22px;
+      background: rgba(11,18,32,0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .modal-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .modal-top strong{ font-size: 14px; letter-spacing: -0.2px; }
+    .close{
+      border:0;
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight: 900;
+    }
+    .close:hover{ background: rgba(255,255,255,0.10); }
+
+    .modal-body{
+      padding: 16px;
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+    }
+    @media(max-width: 860px){ .modal-body{ grid-template-columns: 1fr; } }
+    .modal-body img{
+      width:100%;
+      border-radius: 16px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+    }
+    .modal-body h3{ margin: 6px 0 6px; font-size: 18px; }
+    .modal-body p{ margin: 0 0 10px; color: var(--muted); line-height: 1.7; font-size: 13px; }
+    .modal-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
+
+    /* Animations */
+    .fade-up{ opacity:0; transform: translateY(14px); transition: .7s ease; }
+    .fade-up.show{ opacity:1; transform: translateY(0); }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid var(--brand);
+      outline-offset: 3px;
+    }
+
+    /* Back to top */
+    .to-top{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display:none;
+      z-index: 60;
+    }
+    .to-top.show{ display:block; }
+
+    footer{
+      margin-top: 26px;
+      padding: 22px 18px;
+      color: var(--muted);
+      text-align:center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+    }
+  </style>
 </head>
+
 <body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <strong>Achmad Aulia Akbar</strong>
+      </div>
 
-<header>
-    <h1 class="hero-title">Selamat Datang di Portofolio</h1>
-    <p>Achmad Aulia Akbar</p>
-    <img src="PAS FOTO.webp" 
-     style="width:120px; 
-            height:120px; 
-            object-fit:cover; 
-            border-radius:50%; 
-            margin-top:20px;
-            border:4px solid white;">
-</header>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:center;">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<div class="menu">
-    <button onclick="showSection('cv')">CV</button>
-    <button onclick="showSection('games')">Project Game</button>
-</div>
-
-<div style="max-width:800px; margin:40px auto; text-align:center; color:#94a3b8;">
-<h2 style="color:white;">About Me</h2>
-
-<p>
-Saya adalah Game Developer yang berfokus pada pengembangan game 2D
-menggunakan Unity serta pengembangan web menggunakan HTML, CSS, dan JavaScript.
-Saya senang membangun sistem interaktif, gameplay mechanic, dan pengalaman visual yang menarik.
-</p>
-
-<!-- 🔥 TEMPEL SKILL BUBBLE DI SINI -->
-<div style="margin-top:25px;">
-    <span style="background:#1e293b; padding:8px 15px; margin:5px; border-radius:20px; display:inline-block;">Unity</span>
-    <span style="background:#1e293b; padding:8px 15px; margin:5px; border-radius:20px; display:inline-block;">C#</span>
-    <span style="background:#1e293b; padding:8px 15px; margin:5px; border-radius:20px; display:inline-block;">HTML</span>
-    <span style="background:#1e293b; padding:8px 15px; margin:5px; border-radius:20px; display:inline-block;">CSS</span>
-    <span style="background:#1e293b; padding:8px 15px; margin:5px; border-radius:20px; display:inline-block;">JavaScript</span>
-</div>
-
-</div>
-    
-<!-- CV SECTION -->
-<div id="cv" class="section fade-in">
-    <h2>Curriculum Vitae</h2>
-
-    <!-- Jika mau tampil PDF -->
-    <iframe src="CV_AchmadAuliaAkbar.pdf" width="100%" height="500px"></iframe>
-    <br><br>
-    <a href="CV_AchmadAuliaAkbar.pdf" target="_blank" rel="noopener">🔎 Buka CV di tab baru</a>
-    <button class="back-btn" onclick="goHome()">Kembali</button>
-</div>
-
-<!-- GAME SECTION -->
-<div id="games" class="section fade-in">
-    <h2>Project Game</h2>
-
-    <div class="games">
-
-        <!-- GAME 1 -->
-        <a class="game-card" href="https://achmadakbar.itch.io/learn-jump" target="_blank" rel="noopener">
-            <img src="gambargame1.png" alt="Game 1" loading="lazy">
-            <h3>LEARN & JUMP!</h3>
-            <p>Klik untuk download di itch.io</p>
-        </a>
-
-        <!-- GAME 2 -->
-        <a class="game-card" href="https://meritroia.itch.io/gala-flare-of-bravery" target="_blank" rel="noopener">
-            <img src="gambargame2.png" alt="Game 2" loading="lazy">
-            <h3>GALA : FLARE OF BRAVERY</h3>
-            <p>Klik untuk download di itch.io</p>
-        </a>
-
+      <div class="nav-cta">
+        <a class="btn secondary" href="CV_AchmadAuliaAkbar.pdf" target="_blank" rel="noopener">Open CV</a>
+      </div>
     </div>
+  </div>
 
-    <button class="back-btn" onclick="goHome()">Kembali</button>
-</div>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card hero-left fade-up">
+        <div class="badge">
+          <span class="spark">✦</span>
+          Unity 2D • Web Dev • Gameplay Systems
+        </div>
 
-<footer style="text-align:center; padding:20px; background:#111827; margin-top:50px;">
-    <p style="color:#94a3b8;">
-        © 2026 Achmad Aulia Akbar | Game Developer
-    </p>
-</footer>
-    
+        <h1>Portofolio<br/>Achmad Aulia Akbar</h1>
+
+        <p class="subtitle">
+          Saya berfokus pada pengembangan game 2D menggunakan Unity serta pengembangan web menggunakan HTML, CSS, dan JavaScript.
+          Saya suka membangun sistem interaktif, gameplay mechanic, dan pengalaman visual yang menarik.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#projects">Lihat Projects</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+          <a class="btn danger" href="CV_AchmadAuliaAkbar.pdf" download>Download CV</a>
+        </div>
+      </div>
+
+      <div class="card hero-right fade-up">
+        <img class="avatar" src="PAS FOTO.jpeg" alt="Foto Achmad Aulia Akbar" />
+        <p style="margin:0; font-weight:900;">Game Developer (Unity) & Web Developer</p>
+        <p class="small" style="margin-top:-4px;">Based in Indonesia • Open to opportunities</p>
+
+        <div class="chips" style="justify-content:center;">
+          <span class="chip">Unity</span>
+          <span class="chip">C#</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + HIGHLIGHTS -->
+    <section id="about" class="grid">
+      <div class="card section fade-up">
+        <h2>About Me</h2>
+        <p>
+          Saya membangun game 2D di Unity dengan fokus pada gameplay (movement, combat, UI, state machine, dsb).
+          Di web, saya suka bikin UI yang clean, responsif, dan nyaman dipakai.
+        </p>
+      </div>
+
+      <div class="card section fade-up">
+        <h2>Highlights</h2>
+        <p>
+          • Gameplay mechanic & UI system<br/>
+          • Clean code & debugging<br/>
+          • Dokumentasi project + build release<br/>
+          • Responsive UI (web)
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects-wrap">
+      <div class="projects-head">
+        <h2>Projects</h2>
+        <p class="hint">Klik card untuk lihat detail (modal) atau buka itch.io</p>
+      </div>
+
+      <div class="projects">
+        <!-- Project 1 -->
+        <a class="project fade-up"
+           href="https://achmadakbar.itch.io/learn-jump"
+           target="_blank"
+           rel="noopener"
+           data-title="LEARN & JUMP!"
+           data-image="gambargame1.png"
+           data-desc="Game platformer 2D untuk latihan timing dan movement. Fokus pada feel kontrol, level sederhana, dan feedback visual."
+           data-tags="Unity,2D,Platformer,Gameplay"
+        >
+          <img src="gambargame1.png" alt="Screenshot LEARN & JUMP!" loading="lazy" />
+          <div class="pill-row">
+            <span class="pill">Unity</span><span class="pill">2D</span><span class="pill">Platformer</span>
+          </div>
+          <h3>LEARN & JUMP!</h3>
+          <p>Klik untuk buka itch.io • Tekan tombol “Detail” di modal untuk info lebih lengkap.</p>
+        </a>
+
+        <!-- Project 2 -->
+        <a class="project fade-up"
+           href="https://meritroia.itch.io/gala-flare-of-bravery"
+           target="_blank"
+           rel="noopener"
+           data-title="GALA : FLARE OF BRAVERY"
+           data-image="gambargame2.png"
+           data-desc="Project action/adventure 2D. Menonjolkan karakter, combat feel, dan visual yang lebih sinematik."
+           data-tags="Unity,2D,Action,Combat"
+        >
+          <img src="gambargame2.png" alt="Screenshot GALA : FLARE OF BRAVERY" loading="lazy" />
+          <div class="pill-row">
+            <span class="pill">Unity</span><span class="pill">2D</span><span class="pill">Action</span>
+          </div>
+          <h3>GALA : FLARE OF BRAVERY</h3>
+          <p>Klik untuk buka itch.io • Ada modal detail (preview + deskripsi).</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="card section fade-up" style="margin-top:16px;">
+      <h2>Curriculum Vitae</h2>
+      <p style="margin-bottom:12px;">CV bisa dibaca langsung di sini atau dibuka di tab baru.</p>
+
+      <iframe src="CV_AchmadAuliaAkbar.pdf" title="CV Achmad Aulia Akbar"></iframe>
+
+      <div class="cv-actions">
+        <a class="btn" href="CV_AchmadAuliaAkbar.pdf" download>⬇ Download CV</a>
+        <a class="btn secondary" href="CV_AchmadAuliaAkbar.pdf" target="_blank" rel="noopener">🔎 Open in new tab</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card section fade-up" style="margin-top:16px;">
+      <h2>Contact</h2>
+      <p>Kalau mau kerja sama / rekrut / tanya-tanya, silakan hubungi saya:</p>
+
+      <div class="contact-list">
+        <!-- Ganti email kamu kalau beda -->
+        <a class="contact-item" href="mailto:achmadaakbar29@gmail.com">
+          <div>
+            <strong>Email</strong>
+            <small>achmadaakbar29@gmail.com</small>
+          </div>
+          <span class="pill">Mail</span>
+        </a>
+
+        <a class="contact-item" href="https://github.com/achmadakbarrrr" target="_blank" rel="noopener">
+          <div>
+            <strong>GitHub</strong>
+            <small>@achmadakbarrrr</small>
+          </div>
+          <span class="pill">Code</span>
+        </a>
+
+        <a class="contact-item" href="https://achmadakbar.itch.io/" target="_blank" rel="noopener">
+          <div>
+            <strong>Itch.io</strong>
+            <small>Game releases</small>
+          </div>
+          <span class="pill">Games</span>
+        </a>
+
+        <!-- Kalau punya LinkedIn, isi linknya -->
+        <a class="contact-item" href="#" onclick="return false;">
+          <div>
+            <strong>LinkedIn</strong>
+            <small>Tambahkan link LinkedIn kamu</small>
+          </div>
+          <span class="pill">Profile</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to top -->
+  <div class="to-top" id="toTop">
+    <button class="btn secondary" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Top</button>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-top">
+        <strong id="modalTitle">Project Detail</strong>
+        <button class="close" type="button" id="closeModal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="Preview project" />
+        <div>
+          <h3 id="modalName" style="margin-top:0;">Nama Project</h3>
+          <p id="modalDesc">Deskripsi project...</p>
+
+          <div class="pill-row" id="modalTags"></div>
+
+          <div class="modal-actions">
+            <a class="btn" id="modalOpen" href="#" target="_blank" rel="noopener">Buka Itch.io</a>
+            <button class="btn secondary" type="button" id="modalClose2">Tutup</button>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            Tips: nanti kamu bisa tambahin video gameplay (YouTube) di modal kalau sudah ada linknya.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Achmad Aulia Akbar • Built with HTML/CSS/JS • GitHub Pages
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const fadeEls = [...document.querySelectorAll(".fade-up")];
+    const onScroll = () => {
+      const vh = window.innerHeight;
+      fadeEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < vh - 90) el.classList.add("show");
+      });
+    };
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("load", onScroll);
+
+    // Back-to-top visibility
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    });
+
+    // Modal for project details
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalName = document.getElementById("modalName");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalTags = document.getElementById("modalTags");
+    const modalOpen = document.getElementById("modalOpen");
+
+    function openModalFromCard(card){
+      const title = card.dataset.title || "Project";
+      const img = card.dataset.image || "";
+      const desc = card.dataset.desc || "";
+      const tags = (card.dataset.tags || "").split(",").map(s => s.trim()).filter(Boolean);
+
+      modalName.textContent = title;
+      modalImg.src = img;
+      modalImg.alt = "Preview " + title;
+      modalDesc.textContent = desc;
+
+      modalTags.innerHTML = "";
+      tags.forEach(t => {
+        const span = document.createElement("span");
+        span.className = "pill";
+        span.textContent = t;
+        modalTags.appendChild(span);
+      });
+
+      modalOpen.href = card.href;
+
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".project").forEach(card => {
+      // Ctrl/Click tetap buka itch
+      // Klik biasa -> buka modal dulu
+      card.addEventListener("click", (e) => {
+        // Kalau user memang mau langsung buka tab baru, biarkan
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+        // Default: buka modal, bukan langsung pindah halaman
+        e.preventDefault();
+        openModalFromCard(card);
+      });
+    });
+
+    document.getElementById("closeModal").addEventListener("click", closeModal);
+    document.getElementById("modalClose2").addEventListener("click", closeModal);
+
+    // Klik area gelap untuk close
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // ESC untuk close
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+    });
+  </script>
 </body>
 </html>
