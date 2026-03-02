@@ -435,6 +435,71 @@
     }
     .to-top.show{ display:block; }
 
+    /* Pro sections */
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media(max-width: 860px){ .kpi{ grid-template-columns: 1fr; } }
+
+    .kpi .box{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .kpi .box strong{ font-size: 14px; }
+    .kpi .box p{ margin-top: 6px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    .timeline{
+      margin-top: 14px;
+      display:grid;
+      gap: 12px;
+    }
+    .tl-item{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .tl-dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      margin-top: 6px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 18px rgba(34,211,238,0.25);
+      flex: 0 0 auto;
+    }
+    .tl-content strong{ display:block; font-size: 14px; }
+    .tl-content small{ display:block; color: var(--muted); margin-top: 3px; }
+    .tl-content ul{
+      margin: 8px 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .skills-grid{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media(max-width: 860px){ .skills-grid{ grid-template-columns: 1fr; } }
+
+    .skill-card{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .skill-card h3{ margin: 0 0 8px; font-size: 14px; }
+    .skill-card .pill-row{ margin-top: 10px; }
+    
     footer{
       margin-top: 26px;
       padding: 22px 18px;
@@ -444,6 +509,23 @@
       background: rgba(0,0,0,0.14);
     }
   </style>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Achmad Aulia Akbar",
+    "url": "https://achmadakbarrrr.github.io/achmadakbar/",
+    "sameAs": [
+      "https://www.linkedin.com/in/achmad-aulia-akbar-95b561392",
+      "https://github.com/achmadakbarrrr",
+      "https://achmadakbar.itch.io/"
+    ],
+    "jobTitle": "Game Developer (Unity) & Web Developer",
+    "knowsAbout": ["Unity", "C#", "Game Development", "HTML", "CSS", "JavaScript"]
+  }
+</script>
+  
 </head>
 
 <body>
@@ -457,7 +539,9 @@
 
       <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:center;">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="skills">Skills</a>
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </div>
@@ -516,6 +600,57 @@
         </p>
       </div>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" class="card section fade-up" style="margin-top:16px;">
+      <h2>Experience</h2>
+      <p style="margin-bottom:12px;">
+        Ringkasan pengalaman dan kontribusi saya. (Silakan edit sesuai pengalaman kamu—format ini sudah “HR-ready”.)
+      </p>
+
+      <div class="kpi">
+        <div class="box">
+          <strong>Focus</strong>
+          <p>Unity 2D gameplay systems, UI, debugging & polish.</p>
+        </div>
+        <div class="box">
+          <strong>Strength</strong>
+          <p>Rapid prototyping, iteration cepat, dan menjaga feel gameplay.</p>
+        </div>
+        <div class="box">
+          <strong>Workflow</strong>
+          <p>Planning → build → test → improve → release.</p>
+        </div>
+      </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-dot"></span>
+      <div class="tl-content">
+        <strong>Game Project — LEARN & JUMP!</strong>
+        <small>Unity • 2D Platformer • Role: Developer</small>
+        <ul>
+          <li>Membangun movement/jump feel dan tuning kontrol.</li>
+          <li>Setup level sederhana + feedback visual.</li>
+          <li>Build & publish ke itch.io.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <span class="tl-dot"></span>
+      <div class="tl-content">
+        <strong>Game Project — GALA: Flare of Bravery</strong>
+        <small>Unity • 2D Action • Role: Developer</small>
+        <ul>
+          <li>Kontribusi pada sistem gameplay dan flow level (sesuaikan ya).</li>
+          <li>Polish feel combat/movement dan UX.</li>
+          <li>Kolaborasi tim (kalau memang tim, tambahkan).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
       <div class="card section fade-up">
         <h2>Highlights</h2>
         <p>
@@ -573,6 +708,46 @@
       </div>
     </section>
 
+    <!-- SKILL -->
+    <section id="skills" class="card section fade-up" style="margin-top:16px;">
+      <h2>Skills & Tools</h2>
+      <p>Ringkas, terstruktur, dan gampang dibaca recruiter.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Game Development</h3>
+          <p>Gameplay systems, movement/combat tuning, UI, build & release.</p>
+          <div class="pill-row">
+            <span class="pill">Unity 2D</span>
+            <span class="pill">C#</span>
+            <span class="pill">UI</span>
+            <span class="pill">Debugging</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Web Development</h3>
+          <p>Responsive layout, interaksi UI, struktur halaman yang rapi.</p>
+          <div class="pill-row">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Responsive</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <p>Komunikasi, teamwork, problem solving, dan iterasi cepat.</p>
+          <div class="pill-row">
+            <span class="pill">Teamwork</span>
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Iteration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- CV -->
     <section id="cv" class="card section fade-up" style="margin-top:16px;">
       <h2>Curriculum Vitae</h2>
@@ -618,10 +793,13 @@
         </a>
 
         <!-- Kalau punya LinkedIn, isi linknya -->
-        <a class="contact-item" href="www.linkedin.com/in/achmad-aulia-akbar-95b561392" onclick="return false;">
+        <a class="contact-item"
+           href="https://www.linkedin.com/in/achmad-aulia-akbar-95b561392"
+           target="_blank"
+           rel="noopener">
           <div>
             <strong>LinkedIn</strong>
-            <small>Tambahkan link LinkedIn kamu</small>
+            <small>achmad-aulia-akbar-95b561392</small>
           </div>
           <span class="pill">Profile</span>
         </a>
